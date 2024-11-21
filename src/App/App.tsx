@@ -1,32 +1,42 @@
-import { useState } from 'react'
+import Editor from '@monaco-editor/react'
+import { Box } from '@mui/material'
+import { editor } from 'monaco-editor'
+// @ts-expect-error There's no types for monaco-vim
+import { initVimMode } from 'monaco-vim'
 
 import './App.css'
-import reactLogo from './react.svg'
 
 const App = () => {
-  const [count, setCount] = useState(0)
+  function onMountEditor(monacoEditor: editor.IStandaloneCodeEditor) {
+    initVimMode(monacoEditor, document.querySelector(`.status-node-target`))
+  }
 
   return (
     <div className="App">
-      <div className="flex">
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/icons/favicon.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://eruptionjs.dev" target="_blank" rel="noreferrer">
-          <span className="logo eruption">🌋</span>
-        </a>
-      </div>
-      <h1>Vite + React/TS = EruptionJS</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite, React and Eruption logos to learn more</p>
+      <Box sx={{ width: '100%', border: '1px solid black' }}>
+        <Editor
+          height="80vh"
+          width="80vh"
+          language="plaintext"
+          onMount={onMountEditor}
+          defaultValue="React Monaco Vim"
+          theme="light"
+          options={{
+            fontSize: 16,
+          }}
+        />
+        <code
+          className={`status-node-target`}
+          style={{
+            padding: '3px',
+            backgroundColor: 'lightgray',
+            marginTop: '3px',
+            textAlign: 'left',
+            color: 'black',
+            display: 'none',
+          }}
+        ></code>
+      </Box>
     </div>
   )
 }
