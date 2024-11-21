@@ -20,6 +20,7 @@ dist-ssr
 !.vscode/settings.json
 !.vscode/typescript.code-snippets
 !.vscode/typescriptreact.code-snippets
+.history
 .idea
 .DS_Store
 *.suo

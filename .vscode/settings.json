@@ -48,5 +48,30 @@
   },
 
   "eslint.format.enable": true,
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#c9ca03",
+    "activityBar.background": "#c9ca03",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#027d7e",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#c9ca03",
+    "statusBar.background": "#979802",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#656601",
+    "statusBarItem.remoteBackground": "#979802",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#979802",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#97980299",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#979802"
 }
