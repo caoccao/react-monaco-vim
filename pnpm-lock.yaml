@@ -163,8 +163,8 @@ importers:
         specifier: ^1.3.1
         version: 1.3.1(@types/node@22.9.1)(rollup@4.27.3)
       vite-plugin-qrcode:
-        specifier: ^0.2.3
-        version: 0.2.3(vite@5.4.11(@types/node@22.9.1))
+        specifier: ^0.4.1
+        version: 0.4.1(vite@5.4.11(@types/node@22.9.1))
       vitest:
         specifier: ^2.1.5
         version: 2.1.5(@types/node@22.9.1)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(msw@2.6.5(@types/node@22.9.1)(typescript@5.6.3))(supports-color@7.2.0)
@@ -2909,10 +2909,6 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
-  qrcode-terminal@0.12.0:
-    resolution: {integrity: sha512-EXtzRZmC+YGmGlDFbXKxQiMZNwCLEO6BANKXG4iCtSIM0yqc/pappSx3RIKr4r0uh5JsBckOXeKrB3Iz7mdQpQ==}
-    hasBin: true
-
   querystringify@2.2.0:
     resolution: {integrity: sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==}
 
@@ -3435,6 +3431,9 @@ packages:
     resolution: {integrity: sha512-CJ1QgKmNg3CwvAv/kOFmtnEN05f0D/cn9QntgNOQlQF9dgvVTHj3t+8JPdjqawCHk7V/KA+fbUqzZ9XWhcqPUg==}
     engines: {node: '>= 4.0.0'}
 
+  uqr@0.1.3:
+    resolution: {integrity: sha512-0rjE8iEJe4YmT9TOhwsZtqCMRLc5DXZUI2UEYUUg63ikBkqqE5EYWaI0etFe/5KUcmcYwLih2RND1kq+hrUJXA==}
+
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
@@ -3461,11 +3460,10 @@ packages:
   vite-plugin-compression2@1.3.1:
     resolution: {integrity: sha512-UMr66CFu+RVPiD8E3iaX9BdZjCgO+lzzaAPAZvL5YgwH6FU4OR/MulJEyp9wq9EKoO6ErjUtPpaiDi3hvzv79Q==}
 
-  vite-plugin-qrcode@0.2.3:
-    resolution: {integrity: sha512-TFzhf20v29hnh2XEoZ2kxg8Ff/ui36pR7PGDaHaKEmsQaRagv31XacHxbw5O07HcC1Mkr4tKcYb+PFASSceHmw==}
-    engines: {node: ^14.13.1 || ^16.0.0 || >=18}
+  vite-plugin-qrcode@0.4.1:
+    resolution: {integrity: sha512-t3gdCbn/a2HHLK3M8bUrQ+4c+I0YQGJ/STxAL9eI6TBnfdeM/CJr3HctvOb7UYhEtWxHs5xZWpz7kYnRd5w+rA==}
     peerDependencies:
-      vite: ^3.0.0 || ^4.0.0 || ^5.0.0
+      vite: '>=3'
 
   vite@5.4.11:
     resolution: {integrity: sha512-c7jFQRklXua0mTzneGW9QVyxFjUgwcihC4bXEtujIo2ouWCe1Ajt/amn2PCxYnhYfd5k09JX3SB7OYWFKYqj8Q==}
@@ -6604,8 +6602,6 @@ snapshots:
 
   punycode@2.3.1: {}
 
-  qrcode-terminal@0.12.0: {}
-
   querystringify@2.2.0: {}
 
   queue-microtask@1.2.3: {}
@@ -7258,6 +7254,8 @@ snapshots:
 
   universalify@0.2.0: {}
 
+  uqr@0.1.3: {}
+
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
@@ -7320,9 +7318,9 @@ snapshots:
       - sugarss
       - terser
 
-  vite-plugin-qrcode@0.2.3(vite@5.4.11(@types/node@22.9.1)):
+  vite-plugin-qrcode@0.4.1(vite@5.4.11(@types/node@22.9.1)):
     dependencies:
-      qrcode-terminal: 0.12.0
+      uqr: 0.1.3
       vite: 5.4.11(@types/node@22.9.1)
 
   vite@5.4.11(@types/node@22.9.1):
